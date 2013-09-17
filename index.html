@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Streetview Annotation Example 1</title>
+    <title>Streetview Annotation Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap -->
@@ -33,7 +33,7 @@
     
     <!-- Google maps lib -->
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script src="../src/streetview-annotation.js"></script>
+    <script src="streetview-annotation.js"></script>
 
     <script>
 
@@ -47,12 +47,26 @@
             {html:'<span class="anno">Hungarian Parlament</span>', panoid:"ItriXeg_d6Xu1oyPYxaqBg", heading:-95, pitch:10},
 
             //Maranda dancing. inspired by gifdanceparty.com
-            {html:'<img src="http://d31887jkx2z9wr.cloudfront.net/dancers/maranda.gif" width="30"/>', panoid:"ItriXeg_d6Xu1oyPYxaqBg", heading:-130, pitch:-3}
+            {html:'<a href="http://www.youtube.com/watch?v=o-50GjySwew" target="_blank"><img src="maranda.gif" width="40"/></a>', panoid:"ItriXeg_d6Xu1oyPYxaqBg", heading:-140, pitch:-3}
         ];
 
         //load view
         st.loadStreetview(47.507165, 19.047865);
 
+        //rotate when panorama loaded
+        rotate();
+        function rotate(){
+            window.setTimeout(function(){
+                if(st.currentPano == null){
+                    rotate();
+                }else{
+                    st.panorama.setPov({
+                        heading: -130,
+                        pitch:0
+                    });
+                }
+            }, 300);
+        }
 
 
     </script>
