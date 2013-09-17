@@ -5,12 +5,13 @@
 
 This javascript library was written to create annotation for the latest Google Street View. Inspirred by Mapsicle.
 
+[Demo](http://pg1.github.io/streetview-annotation.js/)
 
 ## Example
 
 
 ```js
-	//create a new instances
+	//create a new instance
 	var st = new STVIEWANNOTATION();
 
 	//set node id
