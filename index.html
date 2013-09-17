@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Streetview Annotation Example 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <style>
+        #streetview{
+            width:100%;
+            height:500px;
+            background: #eee;
+        }
+
+        .anno{
+            padding:5px 10px;
+            background: #fff;
+            border:1px solid #333;
+        }
+    </style>
+    
+    
+  </head>
+  <body>
+
+    <div class="container">
+    
+        <div id="streetview">Loading ...</div>
+
+    </div>
+
+    
+    <!-- Google maps lib -->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="../src/streetview-annotation.js"></script>
+
+    <script>
+
+        //create a new instances
+        var st = new STVIEWANNOTATION();
+
+        //add data 
+        st.markers = [
+            {html:'<span class="anno">Museum of Ethnography</span>', panoid:"ItriXeg_d6Xu1oyPYxaqBg", heading:50, pitch:10},
+            {html:'<span class="anno">Ministry of Rural Development</span>', panoid:"ItriXeg_d6Xu1oyPYxaqBg", heading:137, pitch:10},
+            {html:'<span class="anno">Hungarian Parlament</span>', panoid:"ItriXeg_d6Xu1oyPYxaqBg", heading:-95, pitch:10},
+
+            //Maranda dancing. inspired by gifdanceparty.com
+            {html:'<img src="http://d31887jkx2z9wr.cloudfront.net/dancers/maranda.gif" width="30"/>', panoid:"ItriXeg_d6Xu1oyPYxaqBg", heading:-130, pitch:-3}
+        ];
+
+        //load view
+        st.loadStreetview(47.507165, 19.047865);
+
+
+
+    </script>
+
+  </body>
+</html>
