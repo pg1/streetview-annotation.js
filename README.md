@@ -3,7 +3,7 @@
 ### JavaScript annotation for Google Street View maps v3.
 
 
-This javascript library was written to create annotation for the latest Google Street View. Inspirred by Mapsicle.
+This javascript library was written to create annotation for the latest Google Street View. Inspired by Mapsicle.
 
 [Demo](http://pg1.github.io/streetview-annotation.js/)
 
